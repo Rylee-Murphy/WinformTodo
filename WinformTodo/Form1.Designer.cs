@@ -36,7 +36,7 @@
             lblTaskBox = new Label();
             txtTaskDescription = new TextBox();
             gbTaskList = new GroupBox();
-            listBox1 = new ListBox();
+            lbTask = new ListBox();
             groupBox1.SuspendLayout();
             gbTaskList.SuspendLayout();
             SuspendLayout();
@@ -64,6 +64,7 @@
             btnClear.TabIndex = 5;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnAdd
             // 
@@ -110,7 +111,7 @@
             // 
             // gbTaskList
             // 
-            gbTaskList.Controls.Add(listBox1);
+            gbTaskList.Controls.Add(lbTask);
             gbTaskList.Location = new Point(12, 128);
             gbTaskList.Name = "gbTaskList";
             gbTaskList.Size = new Size(392, 405);
@@ -118,13 +119,14 @@
             gbTaskList.TabStop = false;
             gbTaskList.Text = "Task List";
             // 
-            // listBox1
+            // lbTask
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(6, 20);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(380, 379);
-            listBox1.TabIndex = 0;
+            lbTask.FormattingEnabled = true;
+            lbTask.Location = new Point(6, 20);
+            lbTask.Name = "lbTask";
+            lbTask.Size = new Size(380, 379);
+            lbTask.TabIndex = 0;
+            lbTask.SelectedIndexChanged += lbTask_SelectedIndexChanged;
             // 
             // Form1
             // 
@@ -136,6 +138,7 @@
             Name = "Form1";
             Text = "ToDo App";
             Load += Form1_Load;
+            KeyPress += Form1_KeyPress;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             gbTaskList.ResumeLayout(false);
@@ -152,6 +155,6 @@
         private Label lblTaskBox;
         private Button btnClear;
         private GroupBox gbTaskList;
-        private ListBox listBox1;
+        private ListBox lbTask;
     }
 }
