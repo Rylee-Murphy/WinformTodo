@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            txtTaskDescription = new TextBox();
-            lblTaskBox = new Label();
+            btnClear = new Button();
+            btnAdd = new Button();
             lblDueDate = new Label();
             txtDueDate = new TextBox();
-            btnAdd = new Button();
-            btnClear = new Button();
+            lblTaskBox = new Label();
+            txtTaskDescription = new TextBox();
             gbTaskList = new GroupBox();
-            lvTaskList = new ListView();
+            listBox1 = new ListBox();
             groupBox1.SuspendLayout();
             gbTaskList.SuspendLayout();
             SuspendLayout();
@@ -56,21 +56,24 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Task Form";
             // 
-            // txtTaskDescription
+            // btnClear
             // 
-            txtTaskDescription.Location = new Point(70, 16);
-            txtTaskDescription.Name = "txtTaskDescription";
-            txtTaskDescription.Size = new Size(316, 23);
-            txtTaskDescription.TabIndex = 0;
+            btnClear.Location = new Point(230, 74);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(75, 23);
+            btnClear.TabIndex = 5;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
             // 
-            // lblTaskBox
+            // btnAdd
             // 
-            lblTaskBox.AutoSize = true;
-            lblTaskBox.Location = new Point(6, 19);
-            lblTaskBox.Name = "lblTaskBox";
-            lblTaskBox.Size = new Size(30, 15);
-            lblTaskBox.TabIndex = 1;
-            lblTaskBox.Text = "Task";
+            btnAdd.Location = new Point(311, 74);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(75, 23);
+            btnAdd.TabIndex = 4;
+            btnAdd.Text = "Add ToDo";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // lblDueDate
             // 
@@ -85,31 +88,29 @@
             // 
             txtDueDate.Location = new Point(70, 45);
             txtDueDate.Name = "txtDueDate";
-            txtDueDate.PlaceholderText = "2025-01-21";
+            txtDueDate.PlaceholderText = "0000-00-00";
             txtDueDate.Size = new Size(316, 23);
             txtDueDate.TabIndex = 2;
             // 
-            // btnAdd
+            // lblTaskBox
             // 
-            btnAdd.Location = new Point(311, 74);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 23);
-            btnAdd.TabIndex = 4;
-            btnAdd.Text = "Add ToDo";
-            btnAdd.UseVisualStyleBackColor = true;
+            lblTaskBox.AutoSize = true;
+            lblTaskBox.Location = new Point(6, 19);
+            lblTaskBox.Name = "lblTaskBox";
+            lblTaskBox.Size = new Size(30, 15);
+            lblTaskBox.TabIndex = 1;
+            lblTaskBox.Text = "Task";
             // 
-            // btnClear
+            // txtTaskDescription
             // 
-            btnClear.Location = new Point(230, 74);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(75, 23);
-            btnClear.TabIndex = 5;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
+            txtTaskDescription.Location = new Point(70, 16);
+            txtTaskDescription.Name = "txtTaskDescription";
+            txtTaskDescription.Size = new Size(316, 23);
+            txtTaskDescription.TabIndex = 0;
             // 
             // gbTaskList
             // 
-            gbTaskList.Controls.Add(lvTaskList);
+            gbTaskList.Controls.Add(listBox1);
             gbTaskList.Location = new Point(12, 128);
             gbTaskList.Name = "gbTaskList";
             gbTaskList.Size = new Size(392, 405);
@@ -117,13 +118,13 @@
             gbTaskList.TabStop = false;
             gbTaskList.Text = "Task List";
             // 
-            // lvTaskList
+            // listBox1
             // 
-            lvTaskList.Location = new Point(6, 22);
-            lvTaskList.Name = "lvTaskList";
-            lvTaskList.Size = new Size(380, 377);
-            lvTaskList.TabIndex = 0;
-            lvTaskList.UseCompatibleStateImageBehavior = false;
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(6, 20);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(380, 379);
+            listBox1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -151,6 +152,6 @@
         private Label lblTaskBox;
         private Button btnClear;
         private GroupBox gbTaskList;
-        private ListView lvTaskList;
+        private ListBox listBox1;
     }
 }

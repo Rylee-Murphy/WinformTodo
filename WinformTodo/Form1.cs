@@ -11,5 +11,11 @@ namespace WinformTodo
         {
 
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Todo myTodo = new Todo(txtTaskDescription.Text, DateTime.Parse(txtDueDate.Text));
+            MessageBox.Show(myTodo.ToString());
+        }
     }
 }
